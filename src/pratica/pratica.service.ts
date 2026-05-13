@@ -104,4 +104,10 @@ async estatisticas() {
   };
 }
 
+  async deletar(id: string) {
+
+  return await this.praticaModel.findByIdAndDelete(id);
+}
+
+
 }

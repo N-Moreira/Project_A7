@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common';
+import {Body, Controller, Get, Post, Query, Delete, Param } from '@nestjs/common';
 import { PraticaService } from './pratica.service';
 
 @Controller()
@@ -35,4 +35,12 @@ export class PraticaController {
 
     return await this.praticaService.estatisticas();
   }
+
+  @Delete('pratica/:id')
+async deletar(@Param('id') id: string) {
+
+  return await this.praticaService.deletar(id);
+}
+
+
 }
